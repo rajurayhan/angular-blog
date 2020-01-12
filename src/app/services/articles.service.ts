@@ -14,11 +14,20 @@ export class ArticlesService {
 
   getAllArticles(): Observable<any>{
     return this.http.get(this.articleListAPI).pipe(
-      // map(data => {
-      //   // let resData = JSON.parse(data);
-      //   console.log(typeof data, data);
+      catchError(this.errorHandler)
+    );
+  }
 
-      // }),
+  getArticle(id): Observable<any>{
+    let singleArticleAPI = this.articleListAPI + '/' + id;
+    return this.http.get(singleArticleAPI).pipe(
+      catchError(this.errorHandler)
+    );
+  }
+
+  getCategories(): Observable<any>{
+    let categoryAPI = 'http://banglabox.net/api/categories';
+    return this.http.get(categoryAPI).pipe(
       catchError(this.errorHandler)
     );
   }

@@ -1,0 +1,17 @@
+@import url('https://fonts.maateen.me/bangla/font.css');
+
+body {
+      font-family: 'Bangla', Arial, sans-serif !important;
+  }
+
+  h2.post-title {
+    font-family: 'Bangla', Arial, sans-serif !important;
+}
+
+h3.post-subtitle {
+    font-family: 'Bangla', Arial, sans-serif !important;
+}
+
+span.anchor{
+	/*color: #0085a1 !important;*/
+}
