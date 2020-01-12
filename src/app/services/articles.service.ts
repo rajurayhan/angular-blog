@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators/';
   providedIn: 'root'
 })
 export class ArticlesService {
-  private articleListAPI    = 'http://banglabox.net/api/articles';
+  private articleListAPI    = 'https://banglabox.net/api/articles';
   // private articleListAPI    = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) { }
@@ -26,7 +26,7 @@ export class ArticlesService {
   }
 
   getCategories(): Observable<any>{
-    let categoryAPI = 'http://banglabox.net/api/categories';
+    let categoryAPI = 'https://banglabox.net/api/categories';
     return this.http.get(categoryAPI).pipe(
       catchError(this.errorHandler)
     );
