@@ -12,8 +12,8 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  getAllArticles(): Observable<any>{
-    return this.http.get(this.articleListAPI).pipe(
+  getAllArticles(page : number): Observable<any>{
+    return this.http.get(this.articleListAPI + '?page=' + page).pipe(
       catchError(this.errorHandler)
     );
   }

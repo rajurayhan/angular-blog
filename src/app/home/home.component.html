@@ -16,7 +16,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div (click)="articleDetails(article)" *ngFor="let article of articles" class="post-preview">
+        <div *ngFor="let article of articles" class="post-preview">
           <a routerLink="/articles/{{ article.id }}" >
             <h2 class="post-title">
               {{ article.title }}
@@ -32,10 +32,10 @@
         <hr>
         <!-- Pager -->
         <div class="clearfix">
-          <a *ngIf="haveArticles" class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <button (click)="loadPreviousPage(currentPage)" *ngIf="currentPage>1" class="btn btn-primary float-left" href="#">&larr; Newer Posts</button>
+          <button (click)="loadNextPage(currentPage)" *ngIf="haveArticles && !lastPage" class="btn btn-primary float-right" href="#">Older Posts &rarr;</button>
         </div>
       </div>
     </div>
   </div>
 
-  

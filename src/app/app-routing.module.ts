@@ -18,6 +18,11 @@ const routes: Routes = [
   },
 
   {
+    path: "articles/pages/:page",
+    component: ArticlesComponent
+  },
+
+  {
     path: "articles/:id",
     component: SingleArticleComponent
   },
