@@ -51,6 +51,7 @@ export class SingleArticleComponent implements OnInit {
     //         error => this.errorMessage = error
     //       );
     // });
+    // console.log(document);
   }
 
   setTitle( newTitle: string) {
